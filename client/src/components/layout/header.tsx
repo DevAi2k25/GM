@@ -31,6 +31,7 @@ export default function Header() {
               <span>24/7 Customer Support</span>
             </div>
             <div className="flex items-center space-x-4">
+              <Link href="/routes" className="hover:gm-text-teal transition-colors">All Pages</Link>
               <Link href="#" className="hover:gm-text-teal transition-colors">Track Order</Link>
               <Link href="#" className="hover:gm-text-teal transition-colors">Help</Link>
               <div className="flex items-center space-x-2">

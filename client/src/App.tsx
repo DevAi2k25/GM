@@ -12,10 +12,14 @@ import Checkout from "@/pages/checkout";
 import OrderConfirmation from "@/pages/order-confirmation";
 import Profile from "@/pages/profile";
 import Auth from "@/pages/auth";
+import SellerDashboard from "@/pages/seller-dashboard";
+import AuthVerification from "@/pages/auth-verification";
+import AuthenticationService from "@/pages/authentication-service";
 import About from "@/pages/about";
 import Contact from "@/pages/contact";
 import Terms from "@/pages/terms";
 import Privacy from "@/pages/privacy";
+import Routes from "@/pages/routes";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -30,10 +34,14 @@ function Router() {
       <Route path="/order-confirmation" component={OrderConfirmation} />
       <Route path="/profile" component={Profile} />
       <Route path="/auth" component={Auth} />
+      <Route path="/seller-dashboard" component={SellerDashboard} />
+      <Route path="/auth-verification" component={AuthVerification} />
+      <Route path="/authentication-service" component={AuthenticationService} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/terms" component={Terms} />
       <Route path="/privacy" component={Privacy} />
+      <Route path="/routes" component={Routes} />
       <Route component={NotFound} />
     </Switch>
   );
