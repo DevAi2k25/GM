@@ -1,0 +1,151 @@
+# Project Description
+GamersMarket is a dedicated e-commerce platform designed to cater to the diverse needs of the gaming community. Beyond simply selling gaming peripherals and hardware, GamersMarket fosters a vibrant marketplace for both new and pre-owned gaming gear, collectibles, and even digital assets like in-game skins and rare items (subject to developer terms and conditions). The platform aims to connect gamers directly, allowing them to buy, sell, and trade items within a trusted environment. GamersMarket will feature a robust rating and review system to ensure transparency and build community trust, setting it apart from generic online retailers.
+
+    A key differentiator of GamersMarket will be its emphasis on authentication and verification. For high-value collectibles and pre-owned items, GamersMarket will offer optional authentication services, providing buyers with confidence in their purchases. Furthermore, GamersMarket will integrate a streamlined shipping and handling process, optimized for the secure delivery of delicate gaming equipment and valuable collectibles. The platform's goal is to be more than just a store; it's to be a hub where gamers can find exactly what they need, connect with fellow enthusiasts, and participate in a thriving gaming economy. GamersMarket will achieve this by prioritizing user experience, security, and community engagement.
+
+# Pages/Screens
+*   *Homepage:* Showcases featured products, trending items, and promotional banners.
+    *   *Category Listing Page:* Displays products based on category (e.g., "Headsets," "Keyboards," "Collectibles," "Consoles").
+    *   *Product Detail Page (PDP):* Provides detailed information about a specific product, including images, descriptions, specifications, pricing, seller information, reviews, and Q&A.
+    *   *Search Results Page:* Displays products based on user search queries.
+    *   *User Profile Page:* Allows users to manage their account information, order history, saved items, and seller listings.
+    *   *Seller Dashboard:* Provides tools for sellers to manage their listings, track sales, and communicate with buyers.
+    *   *Shopping Cart Page:* Displays items added to the cart and allows users to adjust quantities and proceed to checkout.
+    *   *Checkout Page:* Guides users through the shipping address, payment information, and order confirmation process.
+    *   *Order Confirmation Page:* Confirms the order and provides the order details and tracking information.
+    *   *Authentication/Registration Pages:* Handle user registration, login, password reset.
+    *   *Authentication Verification Page:* Verifies authentication codes via text or email to secure user accounts.
+    *   *Contact Us Page:* Provides a form for users to contact GamersMarket support.
+    *   *About Us Page:* Provides information about the GamersMarket platform and its mission.
+    *   *Terms and Conditions Page:* Displays the terms and conditions of using the GamersMarket platform.
+    *   *Privacy Policy Page:* Describes how GamersMarket collects and uses user data.
+    *   *Authentication Service Page:* Allows users to view, select, and pay for authentication services.
+    *   *404 Error Page:* Displays when a user tries to access a page that does not exist.
+
+# Key Features
+- *Verified Item Badges:
+- Products that have undergone GamersMarket's optional authentication service receive a "Verified" badge, displayed prominently on the product detail page. This builds trust and provides assurance to buyers, particularly for high-value items.
+- *Dynamic Pricing Comparison:
+- The product detail page will intelligently display a historical price chart, showing the average, highest, and lowest prices for the item on GamersMarket over the past 30 days. This helps buyers determine if they are getting a good deal.
+- *Collectible Grading System:
+- For collectible items (e.g., rare figurines, limited-edition consoles), sellers can optionally submit their items for grading by a third-party partner (displayed as a widget). The grading report is displayed on the product page, providing an objective assessment of the item's condition.
+- *Integrated Gamers' Marketplace:
+- A specialized section of GamersMarket facilitates the trade of in-game digital assets (skins, characters, items) for games that explicitly allow it. GamersMarket uses API integrations with supported games to ensure secure and verified transactions.
+- *Community Forums:
+- GamersMarket hosts a dedicated forum where users can discuss gaming gear, share their setups, ask questions, and trade tips. These forums are integrated directly into GamersMarket, fostering community and increasing user engagement. The forums include sections for various topics such as PC Hardware, Console Discussions, Game-Specific Gear, Collectibles Discussion, Trading Corner, Marketplace Feedback, and User Reviews.
+- *Personalized Recommendation Engine:
+- Based on user browsing history, purchase history, and profile data, GamersMarket provides personalized product recommendations. The engine is refined continuously by user feedback (e.g., "Not interested," "Add to Wishlist").
+- *Interactive 3D Product Views:
+- On select products (e.g., gaming chairs, keyboards, headsets), users can interact with a 3D model of the product. This allows them to rotate, zoom in, and explore the product from various angles, providing a more immersive shopping experience.
+- *GamersMarket Wallet:
+- A secure digital wallet integrated within the platform. Users can deposit funds, earn rewards, and make purchases with ease. The wallet will support various payment methods, including credit cards, debit cards, and cryptocurrency.
+
+# UI Design
+*   *Theme and Style:* GamersMarket will have a modern, clean, and slightly futuristic design, appealing to tech-savvy gamers. The overall feel will be sophisticated but approachable, emphasizing usability and a sense of excitement. A dark theme will dominate, with bright accent colors to highlight key elements.
+    *   *Color Palette:*
+        *   Primary Background: #121212 (Dark Gray)
+        *   Secondary Background: #1E1E1E (Lighter Gray)
+        *   Accent Color 1: #64FFDA (Teal/Cyan)
+        *   Accent Color 2: #FF4081 (Pink/Magenta)
+        *   Text Color (Primary): #FFFFFF (White)
+        *   Text Color (Secondary): #BDBDBD (Light Gray)
+    *   *Layout Patterns and Components:*
+        *   Grid-based layout for product listings.
+        *   Card-based design for product previews.
+        *   Mega-menu navigation for easy category browsing.
+        *   Carousel sliders for featured products and promotions.
+        *   Custom designed input fields and buttons with subtle hover effects.
+        *   Dropdown menus with smooth transitions.
+        *   Modal windows for quick product views and information.
+    *   *Animations and Transitions:*
+        *   Subtle fade-in and slide-in animations when loading pages and components.
+        *   Hover effects on product cards (e.g., slight elevation, color change).
+        *   Smooth transitions between pages and sections.
+        *   Progress bars and loading spinners to indicate loading states.
+        *   Parallax scrolling effect on the homepage banner.
+    *   *Typography and Icon Styles:*
+        *   Primary Font: "Roboto", sans-serif (for body text and headings)
+        *   Secondary Font: "Montserrat", sans-serif (for titles and UI elements)
+        *   Font Weights: 400, 500, 700
+        *   Icon Style: Line icons (Feather or Font Awesome) with a consistent stroke weight.
+        *   Icon Color: #64FFDA or #FFFFFF depending on the context
+
+# Folder Structure
+```
+```
+    GamersMarket/
+    ├── index.html
+    ├── css/
+    │   ├── gamersmarket.css      (Main stylesheet)
+    │   ├── components/         (CSS for individual components)
+    │   │   ├── header.css
+    │   │   ├── footer.css
+    │   │   ├── product-card.css
+    │   │   ├── buttons.css
+    │   │   ├── form.css
+    │   │   ├── navigation.css
+    │   │   ├── carousel.css
+    │   │   └── ...
+    │   ├── base/              (CSS for general styles)
+    │   │   ├── reset.css
+    │   │   ├── typography.css
+    │   │   ├── variables.css  (Color variables, font sizes, etc.)
+    │   │   └── animations.css
+    │   └── pages/             (CSS specific to different pages)
+    │       ├── homepage.css
+    │       ├── product.css
+    │       ├── search.css
+    │       ├── profile.css
+    │       └── ...
+    ├── js/
+    │   ├── gamersmarket.js       (Main JavaScript file)
+    │   ├── components/         (JS for individual components)
+    │   │   ├── carousel.js
+    │   │   ├── product-view.js
+    │   │   ├── form-validation.js
+    │   │   └── ...
+    │   ├── pages/             (JS specific to different pages)
+    │   │   ├── homepage.js
+    │   │   ├── product.js
+    │   │   ├── search.js
+    │   │   └── ...
+    │   ├── api/                (Handles API calls, could use fetch)
+    │   │   ├── product.api.js
+    │   │   ├── user.api.js
+    │   │   └── ...
+    │   └── utils/
+    │       ├── helpers.js     (Utility functions)
+    │       ├── localStorage.js
+    │       └── ...
+    ├── img/
+    │   ├── logo/
+    │   │   ├── gamersmarket-logo.png
+    │   │   ├── gamersmarket-logo-dark.png
+    │   │   └── ...
+    │   ├── products/          (Images of products - dynamically loaded)
+    │   │   ├── product1.jpg
+    │   │   ├── product2.jpg
+    │   │   └── ...
+    │   ├── icons/            (SVG icons)
+    │   │   ├── search.svg
+    │   │   ├── cart.svg
+    │   │   ├── user.svg
+    │   │   └── ...
+    │   ├── banners/
+    │   │   ├── banner1.jpg
+    │   │   ├── banner2.jpg
+    │   │   └── ...
+    ├── pages/             (HTML for different pages - consider templating engine for scalability)
+    │   ├── homepage.html
+    │   ├── product.html
+    │   ├── search.html
+    │   ├── profile.html
+    │   ├── cart.html
+    │   ├── checkout.html
+    │   ├── login.html
+    │   ├── register.html
+    │   └── ...
+    ├── .gitignore         (Git ignore file)
+    ├── README.md            (Project documentation)
+    ```
+```
