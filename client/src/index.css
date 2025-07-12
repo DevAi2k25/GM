@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(240, 10%, 7%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 11.8%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 11.8%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(174, 100%, 70%);
+  --primary-foreground: hsl(240, 10%, 7%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(174, 100%, 70%);
+  --radius: 0.5rem;
+  
+  /* GamersMarket specific colors */
+  --gm-dark: hsl(0, 0%, 7%);
+  --gm-dark-secondary: hsl(0, 0%, 12%);
+  --gm-teal: hsl(174, 100%, 70%);
+  --gm-pink: hsl(337, 100%, 63%);
+  --gm-text-secondary: hsl(0, 0%, 74%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 7%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 11.8%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 11.8%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(174, 100%, 70%);
+  --primary-foreground: hsl(240, 10%, 7%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(174, 100%, 70%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+
+  .gm-background {
+    background-color: var(--gm-dark);
+  }
+
+  .gm-background-secondary {
+    background-color: var(--gm-dark-secondary);
+  }
+
+  .gm-text-primary {
+    color: var(--foreground);
+  }
+
+  .gm-text-secondary {
+    color: var(--gm-text-secondary);
+  }
+
+  .gm-text-teal {
+    color: var(--gm-teal);
+  }
+
+  .gm-text-pink {
+    color: var(--gm-pink);
+  }
+
+  .gm-bg-teal {
+    background-color: var(--gm-teal);
+  }
+
+  .gm-bg-pink {
+    background-color: var(--gm-pink);
+  }
+
+  .gm-border-teal {
+    border-color: var(--gm-teal);
+  }
+
+  .gm-border-pink {
+    border-color: var(--gm-pink);
+  }
+
+  .gm-shadow-teal {
+    box-shadow: 0 0 20px hsla(174, 100%, 70%, 0.25);
+  }
+
+  .gm-shadow-pink {
+    box-shadow: 0 0 20px hsla(337, 100%, 63%, 0.25);
+  }
+
+  .gm-glow-teal {
+    animation: glow-teal 2s ease-in-out infinite alternate;
+  }
+
+  .gm-glow-pink {
+    animation: glow-pink 2s ease-in-out infinite alternate;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  .animate-glow-teal {
+    animation: glow-teal 2s ease-in-out infinite alternate;
+  }
+
+  .animate-glow-pink {
+    animation: glow-pink 2s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow-teal {
+  0% {
+    box-shadow: 0 0 5px var(--gm-teal);
+  }
+  100% {
+    box-shadow: 0 0 20px var(--gm-teal), 0 0 30px var(--gm-teal);
+  }
+}
+
+@keyframes glow-pink {
+  0% {
+    box-shadow: 0 0 5px var(--gm-pink);
+  }
+  100% {
+    box-shadow: 0 0 20px var(--gm-pink), 0 0 30px var(--gm-pink);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gm-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gm-dark-secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gm-teal);
+}
