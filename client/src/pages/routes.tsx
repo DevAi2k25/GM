@@ -19,7 +19,10 @@ import {
   Play,
   Trophy,
   BarChart3,
-  TrendingUp
+  TrendingUp,
+  Wallet,
+  Heart,
+  HelpCircle
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -121,6 +124,44 @@ export default function RoutesPage() {
       description: "View, select, and pay for authentication services",
       icon: Shield,
       color: "purple"
+    }
+  ];
+
+  const utilityPages = [
+    {
+      path: "/wallet",
+      name: "Gaming Wallet",
+      description: "Manage balance, transactions, and payment methods",
+      icon: Wallet,
+      color: "green"
+    },
+    {
+      path: "/favourites",
+      name: "Favourites",
+      description: "Saved items, wishlists, and price alerts",
+      icon: Heart,
+      color: "red"
+    },
+    {
+      path: "/track-order",
+      name: "Track Order",
+      description: "Real-time order tracking and delivery updates",
+      icon: Package,
+      color: "blue"
+    },
+    {
+      path: "/view-store",
+      name: "View Store",
+      description: "Browse seller stores and their products",
+      icon: Store,
+      color: "purple"
+    },
+    {
+      path: "/help-support",
+      name: "Help & Support",
+      description: "Customer support, FAQ, and contact information",
+      icon: HelpCircle,
+      color: "orange"
     }
   ];
 
@@ -263,7 +304,7 @@ export default function RoutesPage() {
             Use this page to explore and test all functionality.
           </p>
           <div className="flex justify-center space-x-4">
-            <Badge className="gm-bg-teal text-black px-4 py-2">23 Total Pages</Badge>
+            <Badge className="gm-bg-teal text-black px-4 py-2">29 Total Pages</Badge>
             <Badge variant="outline" className="border-pink-500 text-pink-500 px-4 py-2">Fully Responsive</Badge>
             <Badge variant="outline" className="border-purple-500 text-purple-400 px-4 py-2">Dark Theme</Badge>
             <Badge variant="outline" className="border-green-500 text-green-400 px-4 py-2">Advanced Features</Badge>
@@ -306,6 +347,19 @@ export default function RoutesPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {shoppingPages.map((page) => (
+              <PageCard key={page.path} page={page} />
+            ))}
+          </div>
+        </section>
+
+        {/* Utility Pages */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold mb-6 font-mono flex items-center">
+            <Settings className="w-6 h-6 text-yellow-400 mr-3" />
+            Utility Pages
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {utilityPages.map((page) => (
               <PageCard key={page.path} page={page} />
             ))}
           </div>
@@ -359,7 +413,7 @@ export default function RoutesPage() {
             <CardContent>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                 <div>
-                  <div className="text-3xl font-bold gm-text-teal mb-2">17</div>
+                  <div className="text-3xl font-bold gm-text-teal mb-2">29</div>
                   <div className="text-sm gm-text-secondary">Total Pages</div>
                 </div>
                 <div>

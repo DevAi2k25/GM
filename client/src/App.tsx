@@ -26,6 +26,11 @@ import LiveStreams from "@/pages/live-streams";
 import Tournaments from "@/pages/tournaments";
 import Leaderboards from "@/pages/leaderboards";
 import MarketplaceAnalytics from "@/pages/marketplace-analytics";
+import Wallet from "@/pages/wallet";
+import Favourites from "@/pages/favourites";
+import TrackOrder from "@/pages/track-order";
+import ViewStore from "@/pages/view-store";
+import HelpSupport from "@/pages/help-support";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -55,6 +60,11 @@ function Router() {
       <Route path="/tournaments" component={Tournaments} />
       <Route path="/leaderboards" component={Leaderboards} />
       <Route path="/marketplace-analytics" component={MarketplaceAnalytics} />
+      <Route path="/wallet" component={Wallet} />
+      <Route path="/favourites" component={Favourites} />
+      <Route path="/track-order" component={TrackOrder} />
+      <Route path="/view-store" component={ViewStore} />
+      <Route path="/help-support" component={HelpSupport} />
       <Route component={NotFound} />
     </Switch>
   );

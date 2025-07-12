@@ -22,6 +22,10 @@ Preferred communication style: Simple, everyday language.
 ✓ Made routes page the main homepage/landing page as requested
 ✓ Added 6 advanced gaming-related pages: Gaming News, Community Forums, Live Streams, Tournaments, Leaderboards, and Marketplace Analytics
 ✓ Updated routing system to support 23 total pages with seamless navigation
+✓ Added 6 essential utility pages: Wallet, Favourites, Track Order, View Store, Help & Support
+✓ Completely redesigned 404 error page with gaming theme and helpful navigation
+✓ Updated platform to 29 total pages with comprehensive gaming and utility features
+✓ Category selection system is working correctly - users can browse categories from homepage
 
 ## System Architecture
 
@@ -46,15 +50,23 @@ Preferred communication style: Simple, everyday language.
 - **Schema**: Centralized schema definitions in `shared/schema.ts`
 - **Migrations**: Drizzle Kit for database schema management
 
-## Complete Page List (23 Pages)
+## Complete Page List (29 Pages)
 
-### Advanced Gaming Features (6 New Pages)
+### Advanced Gaming Features (6 Pages)
 18. **Gaming News** (`/gaming-news`) - Latest gaming news, reviews, and industry updates
 19. **Community Forums** (`/community-forums`) - Discussion forums for gaming community
 20. **Live Streams** (`/live-streams`) - Watch live gaming content and streams  
 21. **Tournaments** (`/tournaments`) - Gaming tournaments and competitions
 22. **Leaderboards** (`/leaderboards`) - Player rankings and achievements
 23. **Marketplace Analytics** (`/marketplace-analytics`) - Market insights and performance metrics
+
+### Utility Pages (6 Pages)
+24. **Gaming Wallet** (`/wallet`) - Manage balance, transactions, payment methods, and achievements
+25. **Favourites** (`/favourites`) - Saved items, wishlists, price alerts, and collections
+26. **Track Order** (`/track-order`) - Real-time order tracking and delivery updates
+27. **View Store** (`/view-store`) - Browse seller stores, products, and store statistics
+28. **Help & Support** (`/help-support`) - Customer support, FAQ, contact forms, and guides
+29. **Enhanced 404 Page** (`/not-found`) - Redesigned error page with navigation and categories
 
 ## Original Page List (17 Pages)
 
