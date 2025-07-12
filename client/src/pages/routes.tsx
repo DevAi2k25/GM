@@ -14,7 +14,12 @@ import {
   Eye, 
   Store,
   Smartphone,
-  Settings
+  Settings,
+  MessageSquare,
+  Play,
+  Trophy,
+  BarChart3,
+  TrendingUp
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -25,7 +30,7 @@ import Footer from "@/components/layout/footer";
 export default function RoutesPage() {
   const mainPages = [
     {
-      path: "/",
+      path: "/home",
       name: "Homepage",
       description: "Featured products, trending items, and promotional banners",
       icon: Home,
@@ -116,6 +121,51 @@ export default function RoutesPage() {
       description: "View, select, and pay for authentication services",
       icon: Shield,
       color: "purple"
+    }
+  ];
+
+  const advancedPages = [
+    {
+      path: "/gaming-news",
+      name: "Gaming News",
+      description: "Latest gaming news, reviews, and industry updates",
+      icon: FileText,
+      color: "blue"
+    },
+    {
+      path: "/community-forums",
+      name: "Community Forums",
+      description: "Discussion forums for gaming community",
+      icon: MessageSquare,
+      color: "purple"
+    },
+    {
+      path: "/live-streams",
+      name: "Live Streams",
+      description: "Watch live gaming content and streams",
+      icon: Play,
+      color: "red"
+    },
+    {
+      path: "/tournaments",
+      name: "Tournaments",
+      description: "Gaming tournaments and competitions",
+      icon: Trophy,
+      color: "yellow"
+    },
+    {
+      path: "/leaderboards",
+      name: "Leaderboards",
+      description: "Player rankings and achievements",
+      icon: BarChart3,
+      color: "green"
+    },
+    {
+      path: "/marketplace-analytics",
+      name: "Marketplace Analytics",
+      description: "Market insights and performance metrics",
+      icon: TrendingUp,
+      color: "orange"
     }
   ];
 
@@ -213,9 +263,10 @@ export default function RoutesPage() {
             Use this page to explore and test all functionality.
           </p>
           <div className="flex justify-center space-x-4">
-            <Badge className="gm-bg-teal text-black px-4 py-2">17 Total Pages</Badge>
+            <Badge className="gm-bg-teal text-black px-4 py-2">23 Total Pages</Badge>
             <Badge variant="outline" className="border-pink-500 text-pink-500 px-4 py-2">Fully Responsive</Badge>
             <Badge variant="outline" className="border-purple-500 text-purple-400 px-4 py-2">Dark Theme</Badge>
+            <Badge variant="outline" className="border-green-500 text-green-400 px-4 py-2">Advanced Features</Badge>
           </div>
         </div>
       </section>
@@ -268,6 +319,19 @@ export default function RoutesPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {servicePages.map((page) => (
+              <PageCard key={page.path} page={page} />
+            ))}
+          </div>
+        </section>
+
+        {/* Advanced Features */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold mb-6 font-mono flex items-center">
+            <TrendingUp className="w-6 h-6 text-orange-400 mr-3" />
+            Advanced Gaming Features
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {advancedPages.map((page) => (
               <PageCard key={page.path} page={page} />
             ))}
           </div>

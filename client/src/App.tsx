@@ -20,12 +20,19 @@ import Contact from "@/pages/contact";
 import Terms from "@/pages/terms";
 import Privacy from "@/pages/privacy";
 import Routes from "@/pages/routes";
+import GamingNews from "@/pages/gaming-news";
+import CommunityForums from "@/pages/community-forums";
+import LiveStreams from "@/pages/live-streams";
+import Tournaments from "@/pages/tournaments";
+import Leaderboards from "@/pages/leaderboards";
+import MarketplaceAnalytics from "@/pages/marketplace-analytics";
 import NotFound from "@/pages/not-found";
 
 function Router() {
   return (
     <Switch>
-      <Route path="/" component={Home} />
+      <Route path="/" component={Routes} />
+      <Route path="/home" component={Home} />
       <Route path="/category/:slug" component={Category} />
       <Route path="/product/:id" component={Product} />
       <Route path="/search" component={Search} />
@@ -42,6 +49,12 @@ function Router() {
       <Route path="/terms" component={Terms} />
       <Route path="/privacy" component={Privacy} />
       <Route path="/routes" component={Routes} />
+      <Route path="/gaming-news" component={GamingNews} />
+      <Route path="/community-forums" component={CommunityForums} />
+      <Route path="/live-streams" component={LiveStreams} />
+      <Route path="/tournaments" component={Tournaments} />
+      <Route path="/leaderboards" component={Leaderboards} />
+      <Route path="/marketplace-analytics" component={MarketplaceAnalytics} />
       <Route component={NotFound} />
     </Switch>
   );

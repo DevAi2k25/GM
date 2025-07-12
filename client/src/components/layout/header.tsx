@@ -48,7 +48,7 @@ export default function Header() {
           {/* Main Navigation */}
           <div className="flex items-center justify-between py-4">
             {/* Logo */}
-            <Link href="/" className="flex items-center">
+            <Link href="/home" className="flex items-center">
               <div className="text-2xl font-bold font-mono">
                 <span className="gm-text-teal">Gamers</span>
                 <span className="gm-text-pink">Market</span>
