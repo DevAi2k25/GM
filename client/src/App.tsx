@@ -8,8 +8,14 @@ import Category from "@/pages/category";
 import Product from "@/pages/product";
 import Search from "@/pages/search";
 import Cart from "@/pages/cart";
+import Checkout from "@/pages/checkout";
+import OrderConfirmation from "@/pages/order-confirmation";
 import Profile from "@/pages/profile";
 import Auth from "@/pages/auth";
+import About from "@/pages/about";
+import Contact from "@/pages/contact";
+import Terms from "@/pages/terms";
+import Privacy from "@/pages/privacy";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -20,8 +26,14 @@ function Router() {
       <Route path="/product/:id" component={Product} />
       <Route path="/search" component={Search} />
       <Route path="/cart" component={Cart} />
+      <Route path="/checkout" component={Checkout} />
+      <Route path="/order-confirmation" component={OrderConfirmation} />
       <Route path="/profile" component={Profile} />
       <Route path="/auth" component={Auth} />
+      <Route path="/about" component={About} />
+      <Route path="/contact" component={Contact} />
+      <Route path="/terms" component={Terms} />
+      <Route path="/privacy" component={Privacy} />
       <Route component={NotFound} />
     </Switch>
   );

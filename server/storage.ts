@@ -117,7 +117,13 @@ export class MemStorage implements IStorage {
 
   async createUser(insertUser: InsertUser): Promise<User> {
     const id = this.currentUserId++;
-    const user: User = { ...insertUser, id, createdAt: new Date() };
+    const user: User = { 
+      ...insertUser, 
+      id, 
+      createdAt: new Date(),
+      firstName: insertUser.firstName || null,
+      lastName: insertUser.lastName || null
+    };
     this.users.set(id, user);
     return user;
   }
@@ -190,13 +196,20 @@ export class MemStorage implements IStorage {
     );
 
     if (existingItem) {
-      existingItem.quantity += item.quantity;
+      existingItem.quantity = (existingItem.quantity || 0) + (item.quantity || 1);
       this.cartItems.set(existingItem.id, existingItem);
       return existingItem;
     }
 
     const id = this.currentCartId++;
-    const cartItem: CartItem = { ...item, id, createdAt: new Date() };
+    const cartItem: CartItem = { 
+      ...item, 
+      id, 
+      createdAt: new Date(),
+      userId: item.userId || null,
+      productId: item.productId || null,
+      quantity: item.quantity || 1
+    };
     this.cartItems.set(id, cartItem);
     return cartItem;
   }
@@ -232,7 +245,13 @@ export class MemStorage implements IStorage {
 
   async addToWishlist(item: InsertWishlistItem): Promise<WishlistItem> {
     const id = this.currentWishlistId++;
-    const wishlistItem: WishlistItem = { ...item, id, createdAt: new Date() };
+    const wishlistItem: WishlistItem = { 
+      ...item, 
+      id, 
+      createdAt: new Date(),
+      userId: item.userId || null,
+      productId: item.productId || null
+    };
     this.wishlistItems.set(id, wishlistItem);
     return wishlistItem;
   }

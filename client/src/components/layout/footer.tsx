@@ -47,8 +47,8 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold mb-4 font-mono">Support</h3>
             <ul className="space-y-2 text-sm gm-text-secondary">
-              <li><Link href="#" className="hover:gm-text-teal transition-colors">Help Center</Link></li>
-              <li><Link href="#" className="hover:gm-text-teal transition-colors">Contact Us</Link></li>
+              <li><Link href="/contact" className="hover:gm-text-teal transition-colors">Help Center</Link></li>
+              <li><Link href="/contact" className="hover:gm-text-teal transition-colors">Contact Us</Link></li>
               <li><Link href="#" className="hover:gm-text-teal transition-colors">Authentication</Link></li>
               <li><Link href="#" className="hover:gm-text-teal transition-colors">Shipping Info</Link></li>
               <li><Link href="#" className="hover:gm-text-teal transition-colors">Returns</Link></li>
@@ -60,7 +60,7 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold mb-4 font-mono">Company</h3>
             <ul className="space-y-2 text-sm gm-text-secondary">
-              <li><Link href="#" className="hover:gm-text-teal transition-colors">About Us</Link></li>
+              <li><Link href="/about" className="hover:gm-text-teal transition-colors">About Us</Link></li>
               <li><Link href="#" className="hover:gm-text-teal transition-colors">Community</Link></li>
               <li><Link href="#" className="hover:gm-text-teal transition-colors">Careers</Link></li>
               <li><Link href="#" className="hover:gm-text-teal transition-colors">Press</Link></li>
@@ -76,8 +76,8 @@ export default function Footer() {
             © 2024 GamersMarket. All rights reserved.
           </div>
           <div className="flex space-x-6 text-sm gm-text-secondary">
-            <Link href="#" className="hover:gm-text-teal transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:gm-text-teal transition-colors">Terms of Service</Link>
+            <Link href="/privacy" className="hover:gm-text-teal transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:gm-text-teal transition-colors">Terms of Service</Link>
             <Link href="#" className="hover:gm-text-teal transition-colors">Cookie Policy</Link>
           </div>
         </div>

@@ -147,9 +147,11 @@ export default function CartPage() {
                   </div>
                 </div>
 
-                <Button className="w-full gm-bg-teal text-black py-3 font-semibold hover:bg-cyan-400 gm-shadow-teal transition-all duration-300 mb-4">
-                  Proceed to Checkout
-                </Button>
+                <Link href="/checkout">
+                  <Button className="w-full gm-bg-teal text-black py-3 font-semibold hover:bg-cyan-400 gm-shadow-teal transition-all duration-300 mb-4">
+                    Proceed to Checkout
+                  </Button>
+                </Link>
 
                 <div className="text-center text-sm gm-text-secondary">
                   <p>Secure checkout powered by</p>
