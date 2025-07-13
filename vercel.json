@@ -7,10 +7,7 @@
     }
   ],
   "routes": [
-    {
-      "src": "/favicon.ico",
-      "dest": "/client/public/favicon.ico"
-    },
+    { "handle": "filesystem" },
     {
       "src": "/assets/(.*)",
       "dest": "/client/dist/assets/$1"
