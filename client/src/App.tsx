@@ -32,6 +32,10 @@ import TrackOrder from "@/pages/track-order";
 import ViewStore from "@/pages/view-store";
 import HelpSupport from "@/pages/help-support";
 import NotFound from "@/pages/not-found";
+import NewArrivals from "@/pages/new-arrivals";
+import BestSellers from "@/pages/best-sellers";
+import Deals from "@/pages/deals";
+import Community from "@/pages/community";
 
 function Router() {
   return (
@@ -65,6 +69,10 @@ function Router() {
       <Route path="/track-order" component={TrackOrder} />
       <Route path="/view-store" component={ViewStore} />
       <Route path="/help-support" component={HelpSupport} />
+      <Route path="/new-arrivals" component={NewArrivals} />
+      <Route path="/best-sellers" component={BestSellers} />
+      <Route path="/deals" component={Deals} />
+      <Route path="/community" component={Community} />
       <Route component={NotFound} />
     </Switch>
   );
