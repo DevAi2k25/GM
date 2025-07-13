@@ -36,6 +36,7 @@ import NewArrivals from "@/pages/new-arrivals";
 import BestSellers from "@/pages/best-sellers";
 import Deals from "@/pages/deals";
 import Community from "@/pages/community";
+import Settings from "@/pages/settings";
 
 function Router() {
   return (
@@ -73,6 +74,7 @@ function Router() {
       <Route path="/best-sellers" component={BestSellers} />
       <Route path="/deals" component={Deals} />
       <Route path="/community" component={Community} />
+      <Route path="/settings" component={Settings} />
       <Route component={NotFound} />
     </Switch>
   );
