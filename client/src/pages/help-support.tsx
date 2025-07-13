@@ -43,7 +43,7 @@ export default function HelpSupportPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const [ticketForm, setTicketForm] = useState({
-    category: "",
+    category: "general", // Set a default value
     subject: "",
     description: "",
     priority: "medium"
@@ -249,28 +249,35 @@ export default function HelpSupportPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold mb-4 font-mono">
-              Help & <span className="gm-text-teal">Support</span>
+              Help & Support Center
             </h1>
             <p className="text-xl gm-text-secondary max-w-2xl mx-auto">
-              Get the help you need with our comprehensive support center. Search our knowledge base, 
-              contact support, or browse popular articles.
+              Find answers, get help, and contact our support team
             </p>
           </div>
 
           {/* Search Bar */}
-          <div className="max-w-2xl mx-auto mb-12">
+          <div className="max-w-2xl mx-auto">
             <div className="relative">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 gm-text-secondary" />
               <Input
-                placeholder="Search for help articles, guides, or common issues..."
+                type="text"
+                placeholder="Search help articles, FAQs, and guides..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-12 h-14 text-lg gm-background border-gray-700 focus:gm-border-teal"
+                className="w-full gm-background border-gray-700 focus:gm-border-teal pl-12"
               />
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-4 h-4 gm-text-secondary" />
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Support Categories */}
+      {/* Support Categories */}
+      <section className="py-12 gm-background">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl font-bold mb-8 font-mono">
+            Browse Support Categories
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {supportCategories.map((category) => (
               <Card key={category.id} className="gm-background border-gray-700 group hover:gm-border-teal transition-all duration-300 cursor-pointer">
@@ -298,311 +305,84 @@ export default function HelpSupportPage() {
         </div>
       </section>
 
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          {/* Sidebar */}
-          <div className="lg:col-span-1">
-            <div className="space-y-6 sticky top-24">
-              {/* Contact Options */}
-              <Card className="gm-background-secondary border-gray-700">
-                <CardHeader>
-                  <CardTitle className="font-mono">Contact Support</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    {contactOptions.map((option) => (
-                      <div key={option.type} className={`p-3 border rounded-lg ${option.available ? 'border-gray-700 hover:gm-border-teal' : 'border-gray-800'} transition-colors`}>
-                        <div className="flex items-center space-x-3 mb-2">
-                          <option.icon className={`w-5 h-5 ${option.available ? option.color : 'text-gray-600'}`} />
-                          <h4 className={`font-semibold ${option.available ? 'text-white' : 'text-gray-600'}`}>
-                            {option.title}
-                          </h4>
-                        </div>
-                        <p className={`text-xs mb-2 ${option.available ? 'gm-text-secondary' : 'text-gray-600'}`}>
-                          {option.description}
-                        </p>
-                        <div className="flex items-center justify-between text-xs">
-                          <span className={option.available ? 'gm-text-secondary' : 'text-gray-600'}>
-                            {option.responseTime}
-                          </span>
-                          {option.available ? (
-                            <Badge className="gm-bg-teal text-black">Available</Badge>
-                          ) : (
-                            <Badge className="bg-gray-600 text-white">Offline</Badge>
-                          )}
-                        </div>
-                        {option.number && (
-                          <p className="text-xs gm-text-teal mt-1">{option.number}</p>
-                        )}
-                        {option.email && (
-                          <p className="text-xs gm-text-teal mt-1">{option.email}</p>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Quick Links */}
-              <Card className="gm-background-secondary border-gray-700">
-                <CardHeader>
-                  <CardTitle className="font-mono">Quick Links</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
-                    <Link href="/track-order" className="block p-2 rounded hover:bg-gray-800 transition-colors">
-                      <div className="flex items-center space-x-2">
-                        <Package className="w-4 h-4 gm-text-teal" />
-                        <span className="text-sm">Track My Order</span>
-                      </div>
-                    </Link>
-                    <Link href="/profile" className="block p-2 rounded hover:bg-gray-800 transition-colors">
-                      <div className="flex items-center space-x-2">
-                        <Users className="w-4 h-4 gm-text-teal" />
-                        <span className="text-sm">Account Settings</span>
-                      </div>
-                    </Link>
-                    <Link href="/wallet" className="block p-2 rounded hover:bg-gray-800 transition-colors">
-                      <div className="flex items-center space-x-2">
-                        <Wallet className="w-4 h-4 gm-text-teal" />
-                        <span className="text-sm">Payment Methods</span>
-                      </div>
-                    </Link>
-                    <Link href="/seller-dashboard" className="block p-2 rounded hover:bg-gray-800 transition-colors">
-                      <div className="flex items-center space-x-2">
-                        <Store className="w-4 h-4 gm-text-teal" />
-                        <span className="text-sm">Seller Dashboard</span>
-                      </div>
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Operating Hours */}
-              <Card className="gm-background-secondary border-gray-700">
-                <CardHeader>
-                  <CardTitle className="font-mono">Support Hours</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3 text-sm">
-                    <div className="flex items-center justify-between">
-                      <span>Live Chat</span>
-                      <Badge className="gm-bg-teal text-black">24/7</Badge>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span>Phone Support</span>
-                      <span className="gm-text-secondary">9AM-8PM EST</span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span>Email Support</span>
-                      <Badge className="gm-bg-teal text-black">24/7</Badge>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span>Video Calls</span>
-                      <span className="gm-text-secondary">10AM-6PM EST</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-
-          {/* Main Content */}
-          <div className="lg:col-span-3">
-            <Tabs defaultValue="faq">
-              <TabsList className="gm-background-secondary border-gray-700 mb-6">
-                <TabsTrigger value="faq" className="data-[state=active]:gm-bg-teal data-[state=active]:text-black">
-                  FAQ & Articles
-                </TabsTrigger>
-                <TabsTrigger value="contact" className="data-[state=active]:gm-bg-teal data-[state=active]:text-black">
-                  Contact Form
-                </TabsTrigger>
-                <TabsTrigger value="guides" className="data-[state=active]:gm-bg-teal data-[state=active]:text-black">
-                  Guides & Tutorials
-                </TabsTrigger>
-              </TabsList>
-
-              <TabsContent value="faq">
-                {/* Category Filter */}
-                <div className="flex flex-col md:flex-row gap-4 mb-6">
-                  <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-                    <SelectTrigger className="gm-background border-gray-700">
-                      <SelectValue placeholder="All Categories" />
+      {/* Submit Ticket Form */}
+      <section className="py-12 gm-background-secondary">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl mx-auto">
+            <h2 className="text-2xl font-bold mb-8 font-mono">Submit a Support Ticket</h2>
+            <form onSubmit={handleSubmitTicket}>
+              <div className="space-y-6">
+                <div>
+                  <label className="block text-sm font-medium mb-2">Category</label>
+                  <Select
+                    value={ticketForm.category}
+                    onValueChange={(value) => setTicketForm({ ...ticketForm, category: value })}
+                  >
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select a category" />
                     </SelectTrigger>
-                    <SelectContent className="gm-background-secondary border-gray-700">
-                      <SelectItem value="">All Categories</SelectItem>
-                      {supportCategories.map((cat) => (
-                        <SelectItem key={cat.id} value={cat.id}>
-                          {cat.name}
-                        </SelectItem>
-                      ))}
+                    <SelectContent>
+                      <SelectItem value="general">General Inquiry</SelectItem>
+                      <SelectItem value="technical">Technical Support</SelectItem>
+                      <SelectItem value="billing">Billing Issue</SelectItem>
+                      <SelectItem value="account">Account Support</SelectItem>
+                      <SelectItem value="order">Order Issue</SelectItem>
+                      <SelectItem value="other">Other</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
 
-                {/* FAQ Accordion */}
-                <Card className="gm-background-secondary border-gray-700">
-                  <CardHeader>
-                    <CardTitle className="font-mono">Frequently Asked Questions</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <Accordion type="single" collapsible className="space-y-4">
-                      {filteredFAQs.map((faq, index) => (
-                        <AccordionItem key={index} value={`item-${index}`} className="border border-gray-700 rounded-lg px-4">
-                          <AccordionTrigger className="hover:no-underline hover:gm-text-teal">
-                            <div className="flex items-center space-x-3">
-                              <Badge variant="outline" className="border-gray-600 text-xs">
-                                {supportCategories.find(cat => cat.id === faq.category)?.name}
-                              </Badge>
-                              <span>{faq.question}</span>
-                            </div>
-                          </AccordionTrigger>
-                          <AccordionContent className="pb-4">
-                            <p className="gm-text-secondary leading-relaxed mb-4">{faq.answer}</p>
-                            <div className="flex items-center justify-between">
-                              <div className="flex items-center space-x-4">
-                                <span className="text-sm gm-text-secondary">Was this helpful?</span>
-                                <Button variant="ghost" size="sm" className="text-green-400 hover:text-green-300">
-                                  <ThumbsUp className="w-3 h-3 mr-1" />
-                                  {faq.helpful}
-                                </Button>
-                                <Button variant="ghost" size="sm" className="text-red-400 hover:text-red-300">
-                                  <ThumbsDown className="w-3 h-3 mr-1" />
-                                  {faq.notHelpful}
-                                </Button>
-                              </div>
-                            </div>
-                          </AccordionContent>
-                        </AccordionItem>
-                      ))}
-                    </Accordion>
-                  </CardContent>
-                </Card>
-              </TabsContent>
+                <div>
+                  <label className="block text-sm font-medium mb-2">Priority</label>
+                  <Select
+                    value={ticketForm.priority}
+                    onValueChange={(value) => setTicketForm({ ...ticketForm, priority: value })}
+                  >
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select priority" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="low">Low</SelectItem>
+                      <SelectItem value="medium">Medium</SelectItem>
+                      <SelectItem value="high">High</SelectItem>
+                      <SelectItem value="urgent">Urgent</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
 
-              <TabsContent value="contact">
-                <Card className="gm-background-secondary border-gray-700">
-                  <CardHeader>
-                    <CardTitle className="font-mono">Submit a Support Ticket</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <form onSubmit={handleSubmitTicket} className="space-y-6">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                          <label className="block text-sm font-medium mb-2">Category</label>
-                          <Select 
-                            value={ticketForm.category} 
-                            onValueChange={(value) => setTicketForm({...ticketForm, category: value})}
-                          >
-                            <SelectTrigger className="gm-background border-gray-700">
-                              <SelectValue placeholder="Select a category" />
-                            </SelectTrigger>
-                            <SelectContent className="gm-background-secondary border-gray-700">
-                              {supportCategories.map((cat) => (
-                                <SelectItem key={cat.id} value={cat.id}>
-                                  {cat.name}
-                                </SelectItem>
-                              ))}
-                            </SelectContent>
-                          </Select>
-                        </div>
+                <div>
+                  <label className="block text-sm font-medium mb-2">Subject</label>
+                  <Input
+                    type="text"
+                    value={ticketForm.subject}
+                    onChange={(e) => setTicketForm({ ...ticketForm, subject: e.target.value })}
+                    placeholder="Brief description of your issue"
+                    className="w-full gm-background border-gray-700 focus:gm-border-teal"
+                  />
+                </div>
 
-                        <div>
-                          <label className="block text-sm font-medium mb-2">Priority</label>
-                          <Select 
-                            value={ticketForm.priority} 
-                            onValueChange={(value) => setTicketForm({...ticketForm, priority: value})}
-                          >
-                            <SelectTrigger className="gm-background border-gray-700">
-                              <SelectValue />
-                            </SelectTrigger>
-                            <SelectContent className="gm-background-secondary border-gray-700">
-                              <SelectItem value="low">Low</SelectItem>
-                              <SelectItem value="medium">Medium</SelectItem>
-                              <SelectItem value="high">High</SelectItem>
-                              <SelectItem value="urgent">Urgent</SelectItem>
-                            </SelectContent>
-                          </Select>
-                        </div>
-                      </div>
+                <div>
+                  <label className="block text-sm font-medium mb-2">Description</label>
+                  <Textarea
+                    value={ticketForm.description}
+                    onChange={(e) => setTicketForm({ ...ticketForm, description: e.target.value })}
+                    placeholder="Provide detailed information about your issue"
+                    className="w-full gm-background border-gray-700 focus:gm-border-teal min-h-[150px]"
+                  />
+                </div>
 
-                      <div>
-                        <label className="block text-sm font-medium mb-2">Subject</label>
-                        <Input
-                          placeholder="Brief description of your issue"
-                          value={ticketForm.subject}
-                          onChange={(e) => setTicketForm({...ticketForm, subject: e.target.value})}
-                          className="gm-background border-gray-700 focus:gm-border-teal"
-                        />
-                      </div>
-
-                      <div>
-                        <label className="block text-sm font-medium mb-2">Description</label>
-                        <Textarea
-                          placeholder="Please provide detailed information about your issue..."
-                          value={ticketForm.description}
-                          onChange={(e) => setTicketForm({...ticketForm, description: e.target.value})}
-                          className="gm-background border-gray-700 focus:gm-border-teal min-h-32"
-                        />
-                      </div>
-
-                      <div className="flex items-center space-x-4">
-                        <Button type="submit" className="gm-bg-teal text-black hover:bg-cyan-400">
-                          <Send className="w-4 h-4 mr-2" />
-                          Submit Ticket
-                        </Button>
-                        <Button type="button" variant="outline" className="border-gray-700">
-                          <Paperclip className="w-4 h-4 mr-2" />
-                          Attach File
-                        </Button>
-                      </div>
-                    </form>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-
-              <TabsContent value="guides">
-                <Card className="gm-background-secondary border-gray-700">
-                  <CardHeader>
-                    <CardTitle className="font-mono">Popular Guides & Tutorials</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      {popularArticles.map((article, index) => (
-                        <div key={index} className="flex items-center justify-between p-4 border border-gray-700 rounded-lg hover:gm-border-teal transition-colors cursor-pointer">
-                          <div className="flex items-center space-x-4">
-                            <div className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center">
-                              <FileText className="w-6 h-6 gm-text-teal" />
-                            </div>
-                            <div>
-                              <h4 className="font-semibold mb-1">{article.title}</h4>
-                              <div className="flex items-center space-x-3 text-sm gm-text-secondary">
-                                <Badge variant="outline" className="border-gray-600 text-xs">
-                                  {article.category}
-                                </Badge>
-                                <span>{article.views.toLocaleString()} views</span>
-                                <span>•</span>
-                                <div className="flex items-center">
-                                  <Star className="w-3 h-3 text-yellow-400 mr-1 fill-current" />
-                                  {article.rating}
-                                </div>
-                                <span>•</span>
-                                <span>{article.readTime}</span>
-                              </div>
-                            </div>
-                          </div>
-                          <ArrowRight className="w-5 h-5 gm-text-secondary" />
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-            </Tabs>
+                <div className="flex justify-end">
+                  <Button type="submit" className="gm-bg-teal text-black hover:bg-cyan-400">
+                    Submit Ticket
+                  </Button>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
-      </div>
+      </section>
 
+      {/* Rest of the content */}
       <Footer />
     </div>
   );
