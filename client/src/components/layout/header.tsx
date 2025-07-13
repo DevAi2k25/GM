@@ -40,9 +40,9 @@ export default function Header() {
           <div className="container mx-auto px-4 flex justify-between items-center text-xs gm-text-secondary">
             <span>⚡ Flash Sale: Up to 70% Off</span>
             <div className="flex items-center space-x-3">
-              <Link href="#" className="hover:gm-text-teal transition-colors">Track Order</Link>
+              <Link href="/track-order" className="hover:gm-text-teal transition-colors">Track Order</Link>
               <span>|</span>
-              <Link href="#" className="hover:gm-text-teal transition-colors">Help</Link>
+              <Link href="/help-support" className="hover:gm-text-teal transition-colors">Help</Link>
               <span>|</span>
               <div className="flex items-center space-x-1">
                 <Globe className="w-3 h-3" />
@@ -170,22 +170,22 @@ export default function Header() {
               {/* Categories Menu */}
               <div className="absolute left-0 top-full mt-1 w-56 gm-background-secondary border border-gray-700 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform -translate-x-2 group-hover:translate-x-0">
                 <div className="py-1">
-                  <Link href="#" className="block px-4 py-2 text-sm hover:gm-bg-teal hover:text-black transition-colors">
+                  <Link href="/new-arrivals" className="block px-4 py-2 text-sm hover:gm-bg-teal hover:text-black transition-colors">
                     New Arrivals
                   </Link>
-                  <Link href="#" className="block px-4 py-2 text-sm hover:gm-bg-teal hover:text-black transition-colors">
+                  <Link href="/best-sellers" className="block px-4 py-2 text-sm hover:gm-bg-teal hover:text-black transition-colors">
                     Best Sellers
                   </Link>
-                  <Link href="#" className="block px-4 py-2 text-sm hover:gm-bg-teal hover:text-black transition-colors">
+                  <Link href="/deals" className="block px-4 py-2 text-sm hover:gm-bg-teal hover:text-black transition-colors">
                     Deals
                   </Link>
-                  <Link href="#" className="block px-4 py-2 text-sm hover:gm-bg-teal hover:text-black transition-colors">
+                  <Link href="/marketplace" className="block px-4 py-2 text-sm hover:gm-bg-teal hover:text-black transition-colors">
                     Marketplace
                   </Link>
-                  <Link href="#" className="block px-4 py-2 text-sm hover:gm-bg-teal hover:text-black transition-colors">
+                  <Link href="/community" className="block px-4 py-2 text-sm hover:gm-bg-teal hover:text-black transition-colors">
                     Community
                   </Link>
-                  <Link href="#" className="block px-4 py-2 text-sm hover:gm-bg-teal hover:text-black transition-colors">
+                  <Link href="/authentication-service" className="block px-4 py-2 text-sm hover:gm-bg-teal hover:text-black transition-colors">
                     Authentication
                   </Link>
                 </div>
@@ -194,10 +194,10 @@ export default function Header() {
 
             {/* Quick Links */}
             <nav className="flex items-center space-x-6 px-4">
-              <Link href="#" className="text-sm hover:gm-text-teal transition-colors">New Arrivals</Link>
-              <Link href="#" className="text-sm hover:gm-text-teal transition-colors">Best Sellers</Link>
-              <Link href="#" className="text-sm hover:gm-text-teal transition-colors">Deals</Link>
-              <Link href="#" className="text-sm hover:gm-text-teal transition-colors">Community</Link>
+              <Link href="/new-arrivals" className="text-sm hover:gm-text-teal transition-colors">New Arrivals</Link>
+              <Link href="/best-sellers" className="text-sm hover:gm-text-teal transition-colors">Best Sellers</Link>
+              <Link href="/deals" className="text-sm hover:gm-text-teal transition-colors">Deals</Link>
+              <Link href="/community" className="text-sm hover:gm-text-teal transition-colors">Community</Link>
             </nav>
           </div>
         </div>
