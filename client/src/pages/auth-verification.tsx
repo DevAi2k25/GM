@@ -111,101 +111,121 @@ export default function AuthVerificationPage() {
     <div className="min-h-screen">
       <Header />
       
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-2xl mx-auto">
-          <div className="flex items-center space-x-4 mb-8">
-            <Link href="/auth">
+      <div className="container mx-auto px-4 py-12">
+        <div className="max-w-4xl mx-auto">
+          {/* Header */}
+          <div className="mb-12 text-center">
+            <Link href="/auth" className="inline-block mb-6">
               <Button variant="ghost" size="sm" className="gm-text-secondary hover:gm-text-teal">
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Back to Login
               </Button>
             </Link>
-            <div>
-              <h1 className="text-3xl font-bold font-mono">Verify Your Account</h1>
-              <p className="gm-text-secondary">Complete your account setup for secure access</p>
-            </div>
+            <h1 className="text-4xl font-bold font-mono mb-3">Verify Your Account</h1>
+            <p className="gm-text-secondary text-lg">Complete your account setup for secure access</p>
           </div>
 
+          {/* Main Content */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Verification Method Selection */}
-            <Card className="gm-background-secondary border-gray-700">
-              <CardHeader>
-                <CardTitle className="font-mono">Choose Verification Method</CardTitle>
+            <Card className="gm-background-secondary border-gray-700 h-full">
+              <CardHeader className="text-center">
+                <CardTitle className="font-mono text-2xl">Choose Verification Method</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-3">
+              <CardContent className="space-y-6">
+                <div className="space-y-4">
                   <button
                     onClick={() => setVerificationMethod("email")}
-                    className={`w-full p-4 border rounded-lg text-left transition-colors ${
+                    className={`w-full p-6 border rounded-lg text-left transition-all ${
                       verificationMethod === "email" 
                         ? "gm-border-teal gm-bg-teal/10" 
                         : "border-gray-700 hover:border-gray-600"
                     }`}
                   >
-                    <div className="flex items-center space-x-3">
-                      <Mail className={`w-5 h-5 ${verificationMethod === "email" ? "gm-text-teal" : "gm-text-secondary"}`} />
+                    <div className="flex items-center space-x-4">
+                      <div className={`w-12 h-12 rounded-full flex items-center justify-center ${
+                        verificationMethod === "email" ? "bg-cyan-400/20" : "bg-gray-800"
+                      }`}>
+                        <Mail className={`w-6 h-6 ${verificationMethod === "email" ? "gm-text-teal" : "gm-text-secondary"}`} />
+                      </div>
                       <div>
-                        <h3 className="font-semibold">Email Verification</h3>
-                        <p className="text-sm gm-text-secondary">Send code to {userEmail}</p>
+                        <h3 className="font-semibold text-lg mb-1">Email Verification</h3>
+                        <p className="text-sm gm-text-secondary">{userEmail}</p>
                       </div>
                     </div>
                   </button>
 
                   <button
                     onClick={() => setVerificationMethod("sms")}
-                    className={`w-full p-4 border rounded-lg text-left transition-colors ${
+                    className={`w-full p-6 border rounded-lg text-left transition-all ${
                       verificationMethod === "sms" 
                         ? "gm-border-teal gm-bg-teal/10" 
                         : "border-gray-700 hover:border-gray-600"
                     }`}
                   >
-                    <div className="flex items-center space-x-3">
-                      <Smartphone className={`w-5 h-5 ${verificationMethod === "sms" ? "gm-text-teal" : "gm-text-secondary"}`} />
+                    <div className="flex items-center space-x-4">
+                      <div className={`w-12 h-12 rounded-full flex items-center justify-center ${
+                        verificationMethod === "sms" ? "bg-cyan-400/20" : "bg-gray-800"
+                      }`}>
+                        <Smartphone className={`w-6 h-6 ${verificationMethod === "sms" ? "gm-text-teal" : "gm-text-secondary"}`} />
+                      </div>
                       <div>
-                        <h3 className="font-semibold">SMS Verification</h3>
-                        <p className="text-sm gm-text-secondary">Send code to {userPhone}</p>
+                        <h3 className="font-semibold text-lg mb-1">SMS Verification</h3>
+                        <p className="text-sm gm-text-secondary">{userPhone}</p>
                       </div>
                     </div>
                   </button>
                 </div>
 
-                <div className="pt-4 border-t border-gray-700">
-                  <h4 className="font-semibold mb-2">Why verify your account?</h4>
-                  <ul className="text-sm gm-text-secondary space-y-1">
-                    <li>• Secure your account from unauthorized access</li>
-                    <li>• Enable high-value transactions</li>
-                    <li>• Access seller features and authentication services</li>
-                    <li>• Receive important account notifications</li>
+                <div className="p-6 border border-gray-700 rounded-lg bg-gray-800/50">
+                  <h4 className="font-semibold text-lg mb-4">Why verify your account?</h4>
+                  <ul className="space-y-3 text-sm gm-text-secondary">
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 gm-text-teal mr-3 flex-shrink-0" />
+                      Secure your account from unauthorized access
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 gm-text-teal mr-3 flex-shrink-0" />
+                      Enable high-value transactions
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 gm-text-teal mr-3 flex-shrink-0" />
+                      Access seller features and authentication services
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-4 h-4 gm-text-teal mr-3 flex-shrink-0" />
+                      Receive important account notifications
+                    </li>
                   </ul>
                 </div>
               </CardContent>
             </Card>
 
             {/* Verification Code Input */}
-            <Card className="gm-background-secondary border-gray-700">
-              <CardHeader>
-                <CardTitle className="font-mono">Enter Verification Code</CardTitle>
+            <Card className="gm-background-secondary border-gray-700 h-full">
+              <CardHeader className="text-center">
+                <CardTitle className="font-mono text-2xl">Enter Verification Code</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-6">
+              <CardContent className="space-y-8">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-cyan-400/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-20 h-20 bg-cyan-400/20 rounded-full flex items-center justify-center mx-auto mb-6">
                     {verificationMethod === "email" ? (
-                      <Mail className="w-8 h-8 gm-text-teal" />
+                      <Mail className="w-10 h-10 gm-text-teal" />
                     ) : (
-                      <Smartphone className="w-8 h-8 gm-text-teal" />
+                      <Smartphone className="w-10 h-10 gm-text-teal" />
                     )}
                   </div>
-                  <p className="gm-text-secondary">
-                    We've sent a 6-digit verification code to{" "}
-                    <span className="gm-text-teal font-semibold">
-                      {verificationMethod === "email" ? userEmail : userPhone}
-                    </span>
+                  <p className="gm-text-secondary text-lg">
+                    We've sent a 6-digit code to
+                  </p>
+                  <p className="gm-text-teal font-semibold text-lg mt-1">
+                    {verificationMethod === "email" ? userEmail : userPhone}
                   </p>
                 </div>
 
                 <div>
                   <Label htmlFor="verification-code" className="sr-only">Verification Code</Label>
-                  <div className="flex justify-center space-x-2">
+                  <div className="flex justify-center space-x-3">
                     {verificationCode.map((digit, index) => (
                       <Input
                         key={index}
@@ -214,7 +234,7 @@ export default function AuthVerificationPage() {
                         value={digit}
                         onChange={(e) => handleCodeChange(index, e.target.value)}
                         onKeyDown={(e) => handleKeyDown(index, e)}
-                        className="w-12 h-12 text-center text-lg font-semibold gm-background border-gray-700 focus:gm-border-teal"
+                        className="w-14 h-14 text-center text-xl font-semibold gm-background border-gray-700 focus:gm-border-teal"
                         maxLength={1}
                       />
                     ))}
@@ -224,11 +244,11 @@ export default function AuthVerificationPage() {
                 <Button
                   onClick={handleVerify}
                   disabled={!isCodeComplete || isVerifying}
-                  className="w-full gm-bg-teal text-black py-3 font-semibold hover:bg-cyan-400 disabled:opacity-50"
+                  className="w-full gm-bg-teal text-black py-6 text-lg font-semibold hover:bg-cyan-400 disabled:opacity-50"
                 >
                   {isVerifying ? (
                     <>
-                      <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin mr-2" />
+                      <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin mr-3" />
                       Verifying...
                     </>
                   ) : (
@@ -236,8 +256,8 @@ export default function AuthVerificationPage() {
                   )}
                 </Button>
 
-                <div className="text-center space-y-2">
-                  <p className="text-sm gm-text-secondary">
+                <div className="text-center">
+                  <p className="text-sm gm-text-secondary mb-2">
                     Didn't receive the code?
                   </p>
                   {canResend ? (
@@ -249,7 +269,7 @@ export default function AuthVerificationPage() {
                     >
                       {isResending ? (
                         <>
-                          <RefreshCw className="w-3 h-3 mr-1 animate-spin" />
+                          <RefreshCw className="w-4 h-4 animate-spin mr-2" />
                           Resending...
                         </>
                       ) : (
@@ -258,22 +278,9 @@ export default function AuthVerificationPage() {
                     </Button>
                   ) : (
                     <p className="text-sm gm-text-secondary">
-                      Resend available in {countdown}s
+                      Resend code in <span className="gm-text-teal font-semibold">{countdown}s</span>
                     </p>
                   )}
-                </div>
-
-                <div className="p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg">
-                  <div className="flex items-start space-x-3">
-                    <AlertCircle className="w-5 h-5 text-blue-400 mt-0.5" />
-                    <div className="text-sm">
-                      <p className="font-semibold text-blue-400">Security Tip</p>
-                      <p className="gm-text-secondary">
-                        Never share your verification code with anyone. GamersMarket will never ask 
-                        for your code via phone or email.
-                      </p>
-                    </div>
-                  </div>
                 </div>
               </CardContent>
             </Card>
