@@ -213,9 +213,8 @@ export default function ViewStorePage() {
 
   const handleAddToCart = (productId: number) => {
     addToCart({
-      productId,
-      quantity: 1,
-      userId: 1 // Mock user ID
+      productId: productId,
+      quantity: 1
     });
   };
 

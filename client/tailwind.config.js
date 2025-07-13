@@ -70,5 +70,5 @@ export default {
       },
     },
   },
-  plugins: [await import("tailwindcss-animate").then(m => m.default)],
+  plugins: [require("tailwindcss-animate")],
 } 

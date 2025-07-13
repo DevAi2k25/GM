@@ -3,7 +3,7 @@ import { Heart, ShoppingCart, Star, Shield, Truck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useCart } from "@/hooks/use-cart";
-import type { Product } from "@shared/schema";
+import type { Product } from "../../../shared/schema";
 
 interface ProductCardProps {
   product: Product;
