@@ -63,11 +63,13 @@ export class MemStorage implements IStorage {
     // Seed categories
     const categoriesData = [
       { name: "Gaming Keyboards", slug: "gaming-keyboards", description: "Mechanical & RGB keyboards for gaming", imageUrl: "https://images.unsplash.com/photo-1541140532154-b024d705b90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400", featured: true },
+      { name: "Gaming Mice", slug: "gaming-mice", description: "High-precision gaming mice", imageUrl: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400", featured: true },
       { name: "Gaming Headsets", slug: "gaming-headsets", description: "Professional gaming headsets", imageUrl: "https://images.unsplash.com/photo-1599669454699-248893623440?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400", featured: true },
       { name: "Gaming Chairs", slug: "gaming-chairs", description: "Ergonomic gaming chairs", imageUrl: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400", featured: true },
-      { name: "Gaming Mice", slug: "gaming-mice", description: "High-precision gaming mice", imageUrl: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400", featured: true },
       { name: "Collectibles", slug: "collectibles", description: "Gaming collectibles and figurines", imageUrl: "https://images.unsplash.com/photo-1607853202273-797f1c22a38e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400", featured: true },
       { name: "Consoles", slug: "consoles", description: "Gaming consoles and accessories", imageUrl: "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400", featured: true },
+      { name: "Graphics Cards", slug: "graphics-cards", description: "High-performance gaming graphics cards", imageUrl: "https://images.unsplash.com/photo-1591488320449-011701bb6704?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400", featured: true },
+      { name: "Gaming Monitors", slug: "gaming-monitors", description: "High refresh rate gaming monitors", imageUrl: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400", featured: true }
     ];
 
     categoriesData.forEach(cat => {
@@ -77,12 +79,37 @@ export class MemStorage implements IStorage {
 
     // Seed products
     const productsData = [
+      // Gaming Keyboards
       { name: "Corsair K95 RGB Platinum XT", description: "Premium mechanical gaming keyboard with Cherry MX switches", price: "149.99", originalPrice: "199.99", imageUrl: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300", categoryId: 1, sellerId: 1, stock: 50, featured: true, verified: true, rating: "4.8", reviewCount: 127 },
-      { name: "SteelSeries Arctis Pro Wireless", description: "Hi-Res wireless gaming headset with dual wireless", price: "329.99", originalPrice: null, imageUrl: "https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300", categoryId: 2, sellerId: 1, stock: 25, featured: true, verified: false, rating: "4.6", reviewCount: 89 },
-      { name: "Logitech G Pro X Superlight", description: "Ultra-lightweight wireless gaming mouse for esports", price: "89.99", originalPrice: null, imageUrl: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300", categoryId: 4, sellerId: 1, stock: 75, featured: true, verified: true, rating: "4.9", reviewCount: 234 },
-      { name: "PlayStation 5 Console", description: "Next-gen gaming console with ultra-high speed SSD", price: "499.99", originalPrice: null, imageUrl: "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300", categoryId: 6, sellerId: 1, stock: 10, featured: true, verified: false, rating: "4.8", reviewCount: 156 },
       { name: "Razer BlackWidow V3 Pro", description: "Wireless mechanical gaming keyboard with Razer Green switches", price: "229.99", originalPrice: "249.99", imageUrl: "https://images.unsplash.com/photo-1541140532154-b024d705b90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300", categoryId: 1, sellerId: 1, stock: 30, featured: false, verified: true, rating: "4.7", reviewCount: 98 },
-      { name: "HyperX Cloud Alpha", description: "Gaming headset with dual chamber drivers", price: "99.99", originalPrice: "129.99", imageUrl: "https://images.unsplash.com/photo-1599669454699-248893623440?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300", categoryId: 2, sellerId: 1, stock: 45, featured: false, verified: false, rating: "4.5", reviewCount: 167 },
+      
+      // Gaming Mice
+      { name: "Logitech G Pro X Superlight", description: "Ultra-lightweight wireless gaming mouse for esports", price: "89.99", originalPrice: null, imageUrl: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300", categoryId: 2, sellerId: 1, stock: 75, featured: true, verified: true, rating: "4.9", reviewCount: 234 },
+      { name: "Razer DeathAdder V3 Pro", description: "Professional gaming mouse with optical switches", price: "149.99", originalPrice: "169.99", imageUrl: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300", categoryId: 2, sellerId: 1, stock: 45, featured: true, verified: true, rating: "4.8", reviewCount: 156 },
+
+      // Gaming Headsets
+      { name: "SteelSeries Arctis Pro Wireless", description: "Hi-Res wireless gaming headset with dual wireless", price: "329.99", originalPrice: null, imageUrl: "https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300", categoryId: 3, sellerId: 1, stock: 25, featured: true, verified: false, rating: "4.6", reviewCount: 89 },
+      { name: "HyperX Cloud Alpha", description: "Gaming headset with dual chamber drivers", price: "99.99", originalPrice: "129.99", imageUrl: "https://images.unsplash.com/photo-1599669454699-248893623440?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300", categoryId: 3, sellerId: 1, stock: 45, featured: false, verified: false, rating: "4.5", reviewCount: 167 },
+
+      // Gaming Chairs
+      { name: "Secretlab Titan Evo 2022", description: "Premium gaming chair with 4-way lumbar support", price: "499.99", originalPrice: "549.99", imageUrl: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300", categoryId: 4, sellerId: 1, stock: 15, featured: true, verified: true, rating: "4.9", reviewCount: 342 },
+      { name: "DXRacer Formula Series", description: "Racing style gaming chair with ergonomic design", price: "299.99", originalPrice: "349.99", imageUrl: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300", categoryId: 4, sellerId: 1, stock: 20, featured: false, verified: true, rating: "4.6", reviewCount: 178 },
+
+      // Collectibles
+      { name: "Limited Edition Gaming Statue", description: "Hand-painted collector's statue", price: "199.99", originalPrice: null, imageUrl: "https://images.unsplash.com/photo-1607853202273-797f1c22a38e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300", categoryId: 5, sellerId: 1, stock: 5, featured: true, verified: true, rating: "5.0", reviewCount: 45 },
+      { name: "Gaming Figurine Set", description: "Set of 5 premium gaming figurines", price: "149.99", originalPrice: "179.99", imageUrl: "https://images.unsplash.com/photo-1607853202273-797f1c22a38e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300", categoryId: 5, sellerId: 1, stock: 10, featured: false, verified: true, rating: "4.7", reviewCount: 67 },
+
+      // Consoles
+      { name: "PlayStation 5 Console", description: "Next-gen gaming console with ultra-high speed SSD", price: "499.99", originalPrice: null, imageUrl: "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300", categoryId: 6, sellerId: 1, stock: 10, featured: true, verified: false, rating: "4.8", reviewCount: 156 },
+      { name: "Xbox Series X", description: "Most powerful Xbox console ever", price: "499.99", originalPrice: null, imageUrl: "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300", categoryId: 6, sellerId: 1, stock: 8, featured: true, verified: false, rating: "4.8", reviewCount: 134 },
+
+      // Graphics Cards
+      { name: "NVIDIA RTX 4090", description: "Ultimate gaming graphics card with ray tracing", price: "1599.99", originalPrice: null, imageUrl: "https://images.unsplash.com/photo-1591488320449-011701bb6704?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300", categoryId: 7, sellerId: 1, stock: 5, featured: true, verified: true, rating: "4.9", reviewCount: 89 },
+      { name: "AMD Radeon RX 7900 XTX", description: "High-performance gaming GPU with RDNA 3", price: "999.99", originalPrice: "1099.99", imageUrl: "https://images.unsplash.com/photo-1591488320449-011701bb6704?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300", categoryId: 7, sellerId: 1, stock: 7, featured: true, verified: true, rating: "4.8", reviewCount: 76 },
+
+      // Gaming Monitors
+      { name: "LG 27GP950-B", description: "27\" 4K UHD Gaming Monitor with 144Hz", price: "799.99", originalPrice: "899.99", imageUrl: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300", categoryId: 8, sellerId: 1, stock: 12, featured: true, verified: true, rating: "4.8", reviewCount: 123 },
+      { name: "Samsung Odyssey G7", description: "32\" QHD Curved Gaming Monitor with 240Hz", price: "699.99", originalPrice: "799.99", imageUrl: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300", categoryId: 8, sellerId: 1, stock: 15, featured: true, verified: true, rating: "4.7", reviewCount: 145 }
     ];
 
     productsData.forEach(prod => {
