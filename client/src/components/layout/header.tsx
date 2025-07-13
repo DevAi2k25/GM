@@ -48,34 +48,35 @@ export default function Header() {
           {/* Main Navigation */}
           <div className="flex items-center justify-between py-4">
             {/* Logo */}
-            <Link href="/home" className="flex items-center">
-              <div className="text-2xl font-bold font-mono">
+            <Link href="/home" className="flex items-center space-x-2">
+              <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-pink-500 rounded-lg flex items-center justify-center">
+                <span className="text-black font-bold text-xl">G</span>
+              </div>
+              <div className="text-xl font-bold font-mono">
                 <span className="gm-text-teal">Gamers</span>
                 <span className="gm-text-pink">Market</span>
               </div>
             </Link>
 
-            {/* Search Bar */}
-            <div className="flex-1 max-w-2xl mx-8">
-              <form onSubmit={handleSearch} className="relative">
+            {/* Search */}
+            <form onSubmit={handleSearch} className="hidden lg:flex flex-1 max-w-xl mx-12">
+              <div className="relative flex-1">
                 <Input
                   type="text"
-                  placeholder="Search for gaming gear, collectibles..."
+                  placeholder="Search for products..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-12 pr-20 py-3 gm-background border-gray-700 focus:gm-border-teal"
+                  className="w-full gm-background border-gray-700 focus:gm-border-teal pr-10"
                 />
-                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-4 h-4 gm-text-secondary" />
-                <Button
+                <button
                   type="submit"
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 gm-bg-teal text-black px-4 py-1.5 rounded-md hover:bg-cyan-400 transition-colors font-medium"
+                  className="absolute right-0 top-0 h-full px-3 flex items-center justify-center text-gray-400 hover:text-white"
                 >
-                  Search
-                </Button>
-              </form>
-            </div>
+                  <Search className="w-4 h-4" />
+                </button>
+              </div>
+            </form>
 
-            {/* User Actions */}
             <div className="flex items-center space-x-6">
               {/* Wallet */}
               <div className="flex items-center space-x-2 cursor-pointer hover:gm-text-teal transition-colors">
@@ -114,30 +115,45 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Mega Menu Navigation */}
-          <nav className="border-t border-gray-800">
-            <div className="flex items-center justify-between py-3">
-              <div className="flex items-center space-x-8">
-                <div className="relative group">
-                  <button className="flex items-center space-x-2 py-2 hover:gm-text-teal transition-colors">
-                    <Menu className="w-4 h-4" />
-                    <span className="font-medium">Categories</span>
-                  </button>
+          {/* Collapsible Sidebar Navigation */}
+          <div className="relative">
+            {/* Sidebar Trigger */}
+            <div className="group relative">
+              <button className="flex items-center space-x-2 py-3 px-4 hover:gm-text-teal transition-colors">
+                <Menu className="w-4 h-4" />
+                <span className="font-medium">Categories</span>
+              </button>
+
+              {/* Sidebar Content - Opens on Hover */}
+              <div className="absolute left-0 top-full w-64 gm-background-secondary border border-gray-700 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform -translate-x-2 group-hover:translate-x-0">
+                <div className="py-2">
+                  <Link href="#" className="block px-4 py-2 hover:gm-bg-teal hover:text-black transition-colors">
+                    New Arrivals
+                  </Link>
+                  <Link href="#" className="block px-4 py-2 hover:gm-bg-teal hover:text-black transition-colors">
+                    Best Sellers
+                  </Link>
+                  <Link href="#" className="block px-4 py-2 hover:gm-bg-teal hover:text-black transition-colors">
+                    Deals
+                  </Link>
+                  <Link href="#" className="block px-4 py-2 hover:gm-bg-teal hover:text-black transition-colors">
+                    Marketplace
+                  </Link>
+                  <Link href="#" className="block px-4 py-2 hover:gm-bg-teal hover:text-black transition-colors">
+                    Community
+                  </Link>
+                  <Link href="#" className="block px-4 py-2 hover:gm-bg-teal hover:text-black transition-colors">
+                    Authentication
+                  </Link>
                 </div>
-                
-                <Link href="#" className="hover:gm-text-teal transition-colors">New Arrivals</Link>
-                <Link href="#" className="hover:gm-text-teal transition-colors">Best Sellers</Link>
-                <Link href="#" className="hover:gm-text-teal transition-colors">Deals</Link>
-                <Link href="#" className="hover:gm-text-teal transition-colors">Marketplace</Link>
-                <Link href="#" className="hover:gm-text-teal transition-colors">Community</Link>
-                <Link href="#" className="hover:gm-text-teal transition-colors">Authentication</Link>
-              </div>
-              
-              <div className="flex items-center space-x-4 text-sm">
-                <span className="gm-text-teal">⚡ Flash Sale: Up to 70% Off</span>
               </div>
             </div>
-          </nav>
+
+            {/* Flash Sale Banner */}
+            <div className="absolute right-4 top-1/2 -translate-y-1/2">
+              <span className="gm-text-teal text-sm">⚡ Flash Sale: Up to 70% Off</span>
+            </div>
+          </div>
         </div>
       </header>
 
