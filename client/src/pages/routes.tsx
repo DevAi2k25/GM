@@ -279,8 +279,16 @@ export default function RoutesPage() {
               </code>
               <Link href={page.path}>
                 <Button 
+                  variant="default"
                   size="sm" 
-                  className="gm-bg-teal text-black hover:bg-cyan-400 transition-colors font-medium shadow-lg hover:shadow-cyan-400/20"
+                  style={{
+                    backgroundColor: '#14b8a6',
+                    color: '#000000',
+                    opacity: 1,
+                    visibility: 'visible',
+                    display: 'flex'
+                  }}
+                  className="hover:bg-cyan-400 transition-colors font-medium shadow-lg hover:shadow-cyan-400/20"
                 >
                   Visit Page
                 </Button>

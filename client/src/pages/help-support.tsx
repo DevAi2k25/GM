@@ -272,7 +272,7 @@ export default function HelpSupportPage() {
         </div>
       </section>
 
-      {/* Support Categories */}
+          {/* Support Categories */}
       <section className="py-12 gm-background">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-bold mb-8 font-mono">
@@ -328,56 +328,56 @@ export default function HelpSupportPage() {
                       <SelectItem value="account">Account Support</SelectItem>
                       <SelectItem value="order">Order Issue</SelectItem>
                       <SelectItem value="other">Other</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
+                            </SelectContent>
+                          </Select>
+                        </div>
 
-                <div>
-                  <label className="block text-sm font-medium mb-2">Priority</label>
-                  <Select
-                    value={ticketForm.priority}
+                        <div>
+                          <label className="block text-sm font-medium mb-2">Priority</label>
+                          <Select 
+                            value={ticketForm.priority} 
                     onValueChange={(value) => setTicketForm({ ...ticketForm, priority: value })}
-                  >
+                          >
                     <SelectTrigger>
                       <SelectValue placeholder="Select priority" />
-                    </SelectTrigger>
+                            </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="low">Low</SelectItem>
-                      <SelectItem value="medium">Medium</SelectItem>
-                      <SelectItem value="high">High</SelectItem>
-                      <SelectItem value="urgent">Urgent</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
+                              <SelectItem value="low">Low</SelectItem>
+                              <SelectItem value="medium">Medium</SelectItem>
+                              <SelectItem value="high">High</SelectItem>
+                              <SelectItem value="urgent">Urgent</SelectItem>
+                            </SelectContent>
+                          </Select>
+                      </div>
 
-                <div>
-                  <label className="block text-sm font-medium mb-2">Subject</label>
-                  <Input
+                      <div>
+                        <label className="block text-sm font-medium mb-2">Subject</label>
+                        <Input
                     type="text"
                     value={ticketForm.subject}
                     onChange={(e) => setTicketForm({ ...ticketForm, subject: e.target.value })}
-                    placeholder="Brief description of your issue"
+                          placeholder="Brief description of your issue"
                     className="w-full gm-background border-gray-700 focus:gm-border-teal"
-                  />
-                </div>
+                        />
+                      </div>
 
-                <div>
-                  <label className="block text-sm font-medium mb-2">Description</label>
-                  <Textarea
-                    value={ticketForm.description}
+                      <div>
+                        <label className="block text-sm font-medium mb-2">Description</label>
+                        <Textarea
+                          value={ticketForm.description}
                     onChange={(e) => setTicketForm({ ...ticketForm, description: e.target.value })}
                     placeholder="Provide detailed information about your issue"
                     className="w-full gm-background border-gray-700 focus:gm-border-teal min-h-[150px]"
-                  />
-                </div>
+                        />
+                      </div>
 
                 <div className="flex justify-end">
-                  <Button type="submit" className="gm-bg-teal text-black hover:bg-cyan-400">
-                    Submit Ticket
-                  </Button>
+                        <Button type="submit" className="gm-bg-teal text-black hover:bg-cyan-400">
+                          Submit Ticket
+                        </Button>
                 </div>
-              </div>
-            </form>
+                      </div>
+                    </form>
           </div>
         </div>
       </section>

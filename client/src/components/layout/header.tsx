@@ -193,14 +193,23 @@ export default function Header() {
                   <Link href="/deals" className="block px-4 py-2 text-sm hover:gm-bg-teal hover:text-black transition-colors">
                     Deals
                   </Link>
-                  <Link href="/marketplace" className="block px-4 py-2 text-sm hover:gm-bg-teal hover:text-black transition-colors">
-                    Marketplace
+                  <Link href="/category/gaming-keyboards" className="block px-4 py-2 text-sm hover:gm-bg-teal hover:text-black transition-colors">
+                    Gaming Keyboards
                   </Link>
-                  <Link href="/community" className="block px-4 py-2 text-sm hover:gm-bg-teal hover:text-black transition-colors">
-                    Community
+                  <Link href="/category/gaming-mice" className="block px-4 py-2 text-sm hover:gm-bg-teal hover:text-black transition-colors">
+                    Gaming Mice
                   </Link>
-                  <Link href="/authentication-service" className="block px-4 py-2 text-sm hover:gm-bg-teal hover:text-black transition-colors">
-                    Authentication
+                  <Link href="/category/gaming-headsets" className="block px-4 py-2 text-sm hover:gm-bg-teal hover:text-black transition-colors">
+                    Gaming Headsets
+                  </Link>
+                  <Link href="/category/gaming-chairs" className="block px-4 py-2 text-sm hover:gm-bg-teal hover:text-black transition-colors">
+                    Gaming Chairs
+                  </Link>
+                  <Link href="/category/collectibles" className="block px-4 py-2 text-sm hover:gm-bg-teal hover:text-black transition-colors">
+                    Collectibles
+                  </Link>
+                  <Link href="/category/consoles" className="block px-4 py-2 text-sm hover:gm-bg-teal hover:text-black transition-colors">
+                    Consoles
                   </Link>
                 </div>
               </div>
@@ -208,11 +217,10 @@ export default function Header() {
 
             {/* Quick Links */}
             <nav className="flex items-center space-x-6 px-4">
-              <Link href="/new-arrivals" className="text-sm hover:gm-text-teal transition-colors">New Arrivals</Link>
-              <Link href="/best-sellers" className="text-sm hover:gm-text-teal transition-colors">Best Sellers</Link>
-              <Link href="/deals" className="text-sm hover:gm-text-teal transition-colors">Deals</Link>
+              <Link href="/marketplace" className="text-sm hover:gm-text-teal transition-colors">Marketplace</Link>
+              <Link href="/authentication-service" className="text-sm hover:gm-text-teal transition-colors">Authentication</Link>
               <Link href="/community" className="text-sm hover:gm-text-teal transition-colors">Community</Link>
-              <Link href="/routes" className="text-sm hover:gm-text-teal transition-colors">App Pages</Link>
+              <Link href="/help-support" className="text-sm hover:gm-text-teal transition-colors">Help</Link>
             </nav>
           </div>
         </div>
