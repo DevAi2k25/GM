@@ -3,38 +3,59 @@ import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import ProductCard from "@/components/product-card";
 import { Badge } from "@/components/ui/badge";
+import type { Product } from "@shared/schema";
 
 export default function BestSellersPage() {
   // Dummy data for best sellers
-  const bestSellers = [
+  const bestSellers: Product[] = [
     {
       id: 1,
       name: "Logitech G Pro X Superlight",
-      price: 159.99,
-      image: "/images/products/mouse-pro.jpg",
-      category: "Gaming Mouse",
-      soldCount: 15000,
-      rating: 4.9
+      description: "Ultra-lightweight wireless gaming mouse for professional gaming",
+      price: "159.99",
+      originalPrice: "199.99",
+      imageUrl: "/images/products/mouse-pro.jpg",
+      categoryId: 1,
+      sellerId: 1,
+      stock: 150,
+      featured: true,
+      verified: true,
+      rating: "4.9",
+      reviewCount: 1500,
+      createdAt: new Date("2024-01-01")
     },
     {
       id: 2,
       name: "HyperX Cloud Alpha",
-      price: 99.99,
-      image: "/images/products/headset-alpha.jpg",
-      category: "Gaming Headset",
-      soldCount: 25000,
-      rating: 4.8
+      description: "Professional gaming headset with dual chamber drivers",
+      price: "99.99",
+      originalPrice: "129.99",
+      imageUrl: "/images/products/headset-alpha.jpg",
+      categoryId: 2,
+      sellerId: 1,
+      stock: 200,
+      featured: true,
+      verified: true,
+      rating: "4.8",
+      reviewCount: 2500,
+      createdAt: new Date("2024-01-15")
     },
     {
       id: 3,
       name: "Ducky One 3 SF",
-      price: 119.99,
-      image: "/images/products/keyboard.jpg",
-      category: "Gaming Keyboard",
-      soldCount: 18000,
-      rating: 4.7
-    },
-    // Add more products as needed
+      description: "Premium mechanical keyboard with hot-swappable switches",
+      price: "119.99",
+      originalPrice: "149.99",
+      imageUrl: "/images/products/keyboard.jpg",
+      categoryId: 3,
+      sellerId: 1,
+      stock: 100,
+      featured: true,
+      verified: true,
+      rating: "4.7",
+      reviewCount: 1800,
+      createdAt: new Date("2024-02-01")
+    }
   ];
 
   return (
@@ -75,7 +96,6 @@ export default function BestSellersPage() {
               </div>
               <ProductCard
                 product={product}
-                showSoldCount={true}
               />
             </div>
           ))}
