@@ -264,10 +264,10 @@ export default function RoutesPage() {
   };
 
   const PageCard = ({ page }: { page: any }) => (
-    <Card key={page.path} className="gm-background-secondary border-gray-700 group hover:gm-border-teal transition-all duration-300">
+    <Card key={page.path} className="gm-background-secondary border-gray-700 hover:gm-border-teal transition-all duration-300">
       <CardContent className="p-6">
         <div className="flex items-start space-x-4">
-          <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${getColorClasses(page.color)} group-hover:text-white transition-all duration-300`}>
+          <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${getColorClasses(page.color)} transition-all duration-300`}>
             <page.icon className="w-6 h-6" />
           </div>
           <div className="flex-1">

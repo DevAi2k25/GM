@@ -54,7 +54,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             </Badge>
           )}
 
-          <button className="absolute bottom-2 right-2 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+          <button className="absolute bottom-2 right-2 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center transition-transform hover:scale-110">
             <Heart className="w-4 h-4 text-white" />
           </button>
         </div>

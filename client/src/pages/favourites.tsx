@@ -478,7 +478,7 @@ export default function FavouritesPage() {
                             {viewMode === "grid" ? "Add" : "Add to Cart"}
                           </Button>
                           <Link href={`/product/${item.id}`}>
-                            <Button variant="outline" size="sm" className="border-gray-700">
+                            <Button variant="outline" size="sm" className="border-gray-700 hover:gm-border-teal">
                               <Eye className="w-3 h-3 mr-1" />
                               {viewMode === "grid" ? "View" : "View Details"}
                             </Button>

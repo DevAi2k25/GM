@@ -315,7 +315,7 @@ export default function GamingNewsPage() {
                               </div>
                             </div>
                             
-                            <Button size="sm" className="gm-bg-teal text-black hover:bg-cyan-400">
+                            <Button size="sm" className="gm-bg-teal text-black hover:bg-cyan-400 transition-colors">
                               Read More
                               <ChevronRight className="w-3 h-3 ml-1" />
                             </Button>
