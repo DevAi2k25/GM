@@ -38,18 +38,32 @@ export default function Header() {
         {/* Top Mini Bar */}
         <div className="bg-gray-900 py-1">
           <div className="container mx-auto px-4 flex justify-between items-center text-xs gm-text-secondary">
-            <span>⚡ Flash Sale: Up to 70% Off</span>
+            <Link href="/deals" className="hover:gm-text-teal transition-colors">
+              ⚡ Flash Sale: Up to 70% Off
+            </Link>
             <div className="flex items-center space-x-3">
-              <Link href="/track-order" className="hover:gm-text-teal transition-colors">Track Order</Link>
+              <Link href="/track-order" className="hover:gm-text-teal transition-colors flex items-center">
+                <Package className="w-3 h-3 mr-1" />
+                Track Order
+              </Link>
               <span>|</span>
-              <Link href="/help-support" className="hover:gm-text-teal transition-colors">Help</Link>
+              <Link href="/help-support" className="hover:gm-text-teal transition-colors flex items-center">
+                <HelpCircle className="w-3 h-3 mr-1" />
+                Help
+              </Link>
               <span>|</span>
-              <div className="flex items-center space-x-1">
+              <div className="flex items-center space-x-1 cursor-pointer group relative">
                 <Globe className="w-3 h-3" />
-                <select className="bg-transparent text-xs focus:outline-none">
-                  <option>EN</option>
-                  <option>ES</option>
-                  <option>FR</option>
+                <select 
+                  className="bg-transparent text-xs focus:outline-none cursor-pointer hover:gm-text-teal transition-colors"
+                  onChange={(e) => {
+                    // Handle language change
+                    console.log("Language changed to:", e.target.value);
+                  }}
+                >
+                  <option value="en">EN</option>
+                  <option value="es">ES</option>
+                  <option value="fr">FR</option>
                 </select>
               </div>
             </div>
@@ -198,6 +212,7 @@ export default function Header() {
               <Link href="/best-sellers" className="text-sm hover:gm-text-teal transition-colors">Best Sellers</Link>
               <Link href="/deals" className="text-sm hover:gm-text-teal transition-colors">Deals</Link>
               <Link href="/community" className="text-sm hover:gm-text-teal transition-colors">Community</Link>
+              <Link href="/routes" className="text-sm hover:gm-text-teal transition-colors">App Pages</Link>
             </nav>
           </div>
         </div>
